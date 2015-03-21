@@ -34,7 +34,8 @@
     [self.view addSubview:self.yellowView];
     
     //[self layoutSquares];
-    [self layoutHorizontalRectangles];
+    //[self layoutHorizontalRectangles];
+    [self layoutVerticalRectangles];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,6 +77,18 @@
     self.greenView.frame = CGRectMake(0.0, squareHeight*1.0, squareWidth, squareHeight);
     self.blueView.frame = CGRectMake(0.0, squareHeight*2.0, squareWidth, squareHeight);
     self.yellowView.frame = CGRectMake(0.0, squareHeight*3.0, squareWidth, squareHeight);
+}
+
+- (void)layoutVerticalRectangles
+{
+    float squareWidth = CGRectGetWidth(self.view.bounds) / 4.0;
+    float squareHeight = CGRectGetHeight(self.view.bounds);
+    
+    
+    self.redView.frame = CGRectMake(0.0, 0.0, squareWidth, squareHeight);
+    self.greenView.frame = CGRectMake(squareWidth*1.0, 0.0, squareWidth, squareHeight);
+    self.blueView.frame = CGRectMake(squareWidth*2.0, 0.0, squareWidth, squareHeight);
+    self.yellowView.frame = CGRectMake(squareWidth*3.0, 0.0, squareWidth, squareHeight);
 }
 
 @end
