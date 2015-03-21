@@ -16,5 +16,9 @@
 @property UIView *yellowView;
 
 - (void)layoutSquares;
+- (void)layoutHorizontalRectangles;
+- (void)layoutVerticalRectangles;
+- (void)layoutDiagonalSquares;
+
 
 @end

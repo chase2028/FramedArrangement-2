@@ -35,7 +35,8 @@
     
     //[self layoutSquares];
     //[self layoutHorizontalRectangles];
-    [self layoutVerticalRectangles];
+    //[self layoutVerticalRectangles];
+    [self layoutDiagonalSquares];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,6 +90,31 @@
     self.greenView.frame = CGRectMake(squareWidth*1.0, 0.0, squareWidth, squareHeight);
     self.blueView.frame = CGRectMake(squareWidth*2.0, 0.0, squareWidth, squareHeight);
     self.yellowView.frame = CGRectMake(squareWidth*3.0, 0.0, squareWidth, squareHeight);
+}
+
+- (void)layoutDiagonalSquares
+{
+    /*float squareWidth = CGRectGetWidth(self.view.bounds)/4.0;
+    float squareHeight = CGRectGetHeight(self.view.bounds)/4.0;
+    float angle = 45*(3.14159265/180);
+    CGAffineTransform transform = CGAffineTransformMakeRotation(angle);
+    self.redView.frame = CGRectMake(squareWidth, squareHeight, squareWidth, squareHeight);
+    self.redView.transform = transform;
+    self.greenView.frame = CGRectMake(squareWidth*2.0, squareHeight, squareWidth, squareHeight);
+    self.greenView.transform = transform;
+    self.blueView.frame = CGRectMake(squareWidth, squareHeight*2.0, squareWidth, squareHeight);
+    self.blueView.transform = transform;
+    self.yellowView.frame = CGRectMake(squareWidth*2.0, squareHeight*2.0, squareWidth, squareHeight);
+    self.yellowView.transform = transform;*/
+    
+    float squareWidth = CGRectGetWidth(self.view.bounds)/4.0;
+    float squareHeight = CGRectGetHeight(self.view.bounds)/4.0;
+    
+    self.redView.frame = CGRectMake(0.0, 0.0, squareWidth, squareHeight);
+    self.greenView.frame = CGRectMake(squareWidth, squareHeight, squareWidth, squareHeight);
+    self.blueView.frame = CGRectMake(squareWidth*2.0, squareHeight*2.0, squareWidth, squareHeight);
+    self.yellowView.frame = CGRectMake(squareWidth*3.0, squareHeight*3.0, squareWidth, squareHeight);
+    
 }
 
 @end
